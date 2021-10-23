@@ -4,11 +4,13 @@ import About from "./components/About/About";
 import Friends from "./components/Firends/Friends";
 import NotFound from "./components/NotFound/NotFound";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import Header from "./components/Header/Header";
 
 function App() {
     return (
         <div className="App">
             <BrowserRouter>
+                <Header/>
                 <Switch>
                     <Route exact path="/">
                         <Home/>
