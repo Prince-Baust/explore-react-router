@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Friend from "../About/Friend/Friend";
+import Friend from "../Friend/Friend";
 import './friends.css'
 const Friends = () => {
     const [friends, setFriends] = useState([]);
