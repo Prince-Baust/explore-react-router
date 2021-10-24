@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import {useParams} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 
 const FriendDetails = () => {
     const [friend, setFriend] = useState({});
     const {friendID} = useParams();
+    const history = useHistory();
     const url = `https://jsonplaceholder.typicode.com/users/${friendID}`;
     useEffect(() => {
         fetch(url)
@@ -13,6 +14,9 @@ const FriendDetails = () => {
 
     const {name, phone, email, website, company} = friend;
 
+    const handleSeeAll = () => history.push('/friends');
+
+
     return (
         <div>
             <h2>{name}</h2>
@@ -20,6 +24,7 @@ const FriendDetails = () => {
             <h4>{email}</h4>
             <h5>{website}</h5>
             <h5>{company?.name}</h5>
+            <button onClick={handleSeeAll}>See All Friends</button>
         </div>
     );
 };
